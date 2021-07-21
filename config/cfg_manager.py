@@ -49,3 +49,114 @@ class ReadCutter(object):
         self.__input_path = str(self.__yaml_data["input_path"])
         self.__output_dir = str(self.__yaml_data["output_dir"])
         self.__checkInputPath()
+
+
+class ReadConcatenater(object):
+    PATH = os.path.join(os.getcwd(), "config", "concatenater.yaml")
+
+    @classmethod
+    def getYamlPath(cls) -> str:
+        return cls.PATH
+
+    @property
+    def getConcateType(self) -> bool:
+        return self.__concate_type
+
+    @property
+    def getArrangement(self) -> bool:
+        return self.__arrangement
+
+    @property
+    def getInputPath1(self) -> str:
+        return self.__input_path_1
+
+    @property
+    def getInputPath2(self) -> str:
+        return self.__input_path_2
+
+    @property
+    def getInputPath3(self) -> str:
+        return self.__input_path_3
+
+    @property
+    def getInputPath4(self) -> str:
+        return self.__input_path_4
+
+    @property
+    def getOnputPath(self) -> str:
+        return self.__output_path
+
+    @property
+    def getFileName(self) -> str:
+        return self.__file_name
+
+    @property
+    def getExtension(self) -> str:
+        return self.__extension
+
+    @property
+    def getTitle1(self) -> str:
+        return self.__title_1
+
+    @property
+    def getTitle2(self) -> str:
+        return self.__title_2
+
+    @property
+    def getTitle3(self) -> str:
+        return self.__title_3
+
+    @property
+    def getTitle4(self) -> str:
+        return self.__title_4
+
+    @property
+    def getTitleColor(self) -> tuple:
+        return self.__title_color
+
+    @property
+    def getTitleCoord(self) -> tuple:
+        return self.__title_coord
+
+    @property
+    def getFontSize(self) -> float:
+        return self.__font_size
+
+    @property
+    def getThickness(self) -> float:
+        return self.__thickness
+
+    def __init__(self, path) -> None:
+        """Constructor"""
+        self.__load = YamlLoader(path)
+        self.__yaml_data = self.__load.getYamlData
+        self.__deserialize()
+
+    def __checkPath(self) -> None:
+        if not bool(self.__input_path_1) or not bool(self.__input_path_2):
+            print("[ERROR]画像パス1, 2が未入力")
+            raise Exception
+        if self.__concate_type:  # 4動画合体の場合は3,4のパスが入力されていないとエラーをはく
+            if not bool(self.__input_path_3) or bool(not self.__input_path_4):
+                print("[ERROR]画像パス1, 2が未入力")
+                raise Exception
+
+    def __deserialize(self) -> None:
+        self.__concate_type = bool(self.__yaml_data["concate_type"])
+        self.__arrangement = bool(self.__yaml_data["arrangement"])
+        self.__input_path_1 = self.__yaml_data["input"]["path_1"]
+        self.__input_path_2 = self.__yaml_data["input"]["path_2"]
+        self.__input_path_3 = self.__yaml_data["input"]["path_3"]
+        self.__input_path_4 = self.__yaml_data["input"]["path_4"]
+        self.__output_path = self.__yaml_data["output"]["path"]
+        self.__file_name = self.__yaml_data["output"]["file_name"]
+        self.__extension = self.__yaml_data["output"]["ext"]
+        self.__title_1 = self.__yaml_data["output"]["title_1"]
+        self.__title_2 = self.__yaml_data["output"]["title_2"]
+        self.__title_3 = self.__yaml_data["output"]["title_3"]
+        self.__title_4 = self.__yaml_data["output"]["title_4"]
+        self.__title_color = tuple(self.__yaml_data["output"]["color"])
+        self.__title_coord = tuple(self.__yaml_data["output"]["coordination"])
+        self.__font_size = float(self.__yaml_data["output"]["fontsize"])
+        self.__thickness = float(self.__yaml_data["output"]["thickness"])
+        self.__checkPath()

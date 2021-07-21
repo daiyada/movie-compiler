@@ -1,0 +1,24 @@
+concate_type: 1         # -> 0: 2動画を合体、1: 4動画を合体
+arrangement: 1          # -> 0: 縦方向、1:横方向
+input:
+  path_1: "/media/hishida/ボリューム/10_project/015_GW-retail/002_veloce/009_demo/kitchen/0010_demo_video.mp4"
+  path_2: "/media/hishida/ボリューム/10_project/015_GW-retail/002_veloce/009_demo/kitchen/1020_demo_video.mp4"
+  path_3: "/media/hishida/ボリューム/10_project/015_GW-retail/002_veloce/009_demo/kitchen/2030_demo_video.mp4"
+  path_4: "/media/hishida/ボリューム/10_project/015_GW-retail/002_veloce/009_demo/kitchen/3040_demo_video.mp4"
+output:
+  file_name: "concatenate_kitchen"
+  path: "/home/hishida/Desktop"
+  ext: "mp4"
+  title_1: "12:00-12:10"
+  title_2: "12:10-12:20"
+  title_3: "12:20-12:30"
+  title_4: "12:30-12:40"
+  color:
+    blue: 255
+    green: 0
+    red: 0
+  coordination:
+    x: 10
+    y: 30
+  fontsize: 1.5
+  thickness: 2.0
