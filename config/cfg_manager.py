@@ -83,16 +83,8 @@ class ReadConcatenater(object):
         return self.__input_path_4
 
     @property
-    def getOnputPath(self) -> str:
-        return self.__output_path
-
-    @property
-    def getFileName(self) -> str:
-        return self.__file_name
-
-    @property
-    def getExtension(self) -> str:
-        return self.__extension
+    def getSavePath(self) -> str:
+        return self.__save_path
 
     @property
     def getTitle1(self) -> str:
@@ -123,7 +115,7 @@ class ReadConcatenater(object):
         return self.__font_size
 
     @property
-    def getThickness(self) -> float:
+    def getThickness(self) -> int:
         return self.__thickness
 
     def __init__(self, path) -> None:
@@ -131,6 +123,13 @@ class ReadConcatenater(object):
         self.__load = YamlLoader(path)
         self.__yaml_data = self.__load.getYamlData
         self.__deserialize()
+
+    def __makeSavePath(self) -> None:
+        file_name = self.__yaml_data["output"]["file_name"]
+        ext = self.__yaml_data["output"]["ext"]
+        output_dir = self.__yaml_data["output"]["path"]
+        os.makedirs(output_dir, exist_ok=True)
+        self.__save_path = os.path.join(output_dir, "{}.{}".format(file_name, ext))
 
     def __checkPath(self) -> None:
         if not bool(self.__input_path_1) or not bool(self.__input_path_2):
@@ -148,9 +147,6 @@ class ReadConcatenater(object):
         self.__input_path_2 = self.__yaml_data["input"]["path_2"]
         self.__input_path_3 = self.__yaml_data["input"]["path_3"]
         self.__input_path_4 = self.__yaml_data["input"]["path_4"]
-        self.__output_path = self.__yaml_data["output"]["path"]
-        self.__file_name = self.__yaml_data["output"]["file_name"]
-        self.__extension = self.__yaml_data["output"]["ext"]
         self.__title_1 = self.__yaml_data["output"]["title_1"]
         self.__title_2 = self.__yaml_data["output"]["title_2"]
         self.__title_3 = self.__yaml_data["output"]["title_3"]
@@ -158,5 +154,6 @@ class ReadConcatenater(object):
         self.__title_color = tuple(self.__yaml_data["output"]["color"])
         self.__title_coord = tuple(self.__yaml_data["output"]["coordination"])
         self.__font_size = float(self.__yaml_data["output"]["fontsize"])
-        self.__thickness = float(self.__yaml_data["output"]["thickness"])
+        self.__thickness = int(self.__yaml_data["output"]["thickness"])
+        self.__makeSavePath()
         self.__checkPath()
