@@ -127,7 +127,7 @@ class ReadConcatenater(object):
     def __makeSavePath(self) -> None:
         file_name = self.__yaml_data["output"]["file_name"]
         ext = self.__yaml_data["output"]["ext"]
-        output_dir = self.__yaml_data["output"]["path"]
+        output_dir = self.__yaml_data["output"]["dir"]
         os.makedirs(output_dir, exist_ok=True)
         self.__save_path = os.path.join(output_dir, "{}.{}".format(file_name, ext))
 

@@ -6,18 +6,18 @@ input:
   path_3: ""
   path_4: ""
 output:
-  file_name: "concatenate_kitchen"
-  path: ""              # 出力先ディレクトリ
-  ext: "mp4"
+  file_name: "sample"
+  dir: ""              # 出力先ディレクトリ
+  ext: "avi"
   title_1: "12:00-12:10"
   title_2: "12:10-12:20"
   title_3: "12:20-12:30"
   title_4: "12:30-12:40"
-  color:
+  color:                # titleの文字の色
     - 255               # Blue
     - 0                 # Green
     - 0                 # Red
-  coordination:
+  coordination:         # titleを表示する位置
     - 10                # x座標
     - 30                # y座標
   fontsize: 1.5

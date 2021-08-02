@@ -1,0 +1,5 @@
+start_time:  16       # unit: second
+end_time: 20          # unit: second
+# 以下、絶対パス
+input_path: "/media/hishida/ボリューム/10_project/015_GW-retail/002_veloce/009_demo/attribute_diagnosis/result_20210616_12.avi"
+output_dir: "/home/hishida/Desktop"        # 出力先
