@@ -142,3 +142,6 @@ output/
 
 # Sample
 smple.py
+
+# venv
+.mc-env
