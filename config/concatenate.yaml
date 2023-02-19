@@ -1,18 +1,18 @@
 concate_type: 0         # -> 0: 2動画を合体、1: 4動画を合体
-arrangement: 0          # -> 0: 縦方向、1:横方向
+arrangement: 1          # -> 0: 縦方向、1:横方向
 input:
-  path_1: ""            # 以下絶対パス
-  path_2: ""
-  path_3: ""
-  path_4: ""
+  path_1: "path/your/data_a.mp4"            # 以下絶対パス
+  path_2: "path/your/data_a.mp4"
+  path_3: "path/your/data_a.mp4"
+  path_4: "path/your/data_a.mp4"
 output:
-  file_name: "sample"
-  dir: ""              # 出力先ディレクトリ
-  ext: "avi"
-  title_1: "12:00-12:10"
-  title_2: "12:10-12:20"
-  title_3: "12:20-12:30"
-  title_4: "12:30-12:40"
+  file_name: "your_preferece_name"
+  dir: "your/preference/output_dir"              # 出力先ディレクトリ
+  ext: "mp4"
+  title_1: "A"
+  title_2: "B"
+  title_3: "C"
+  title_4: "D"
   color:                # titleの文字の色
     - 255               # Blue
     - 0                 # Green
@@ -20,5 +20,5 @@ output:
   coordination:         # titleを表示する位置
     - 10                # x座標
     - 30                # y座標
-  fontsize: 1.5
+  fontsize: 2.5
   thickness: 2.0

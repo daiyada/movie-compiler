@@ -1,6 +1,7 @@
 # movie-compiler
 簡単な動画編集が可能
 
+
 ## 使用方法
 ### 1. 環境構築
 ```
@@ -15,9 +16,14 @@ config/cut.yamlの設定値に則って、特定の動画を切り出す
 config/concatenate.yamlの設定値に則って、動画を合体する
     - 注意画像サイズは同じもので（後に変更対応できるようにしようとは思っています。）
     - fourcc, fps等はmovie_1に合わせています（ここも今後のPJ次第では変更しようかと思っています。）
+- change_fps.py
+    - 動画のfpsを変更する
+        - 元の動画のfps未満にしか調整はできない
+- change_resolution.py
+    - 動画の解像度を変更する
+
 
 ### 3. 設定ファイル  
-
 configフォルダ内に格納  
 - cut.yaml  
 cut.pyの設定値を記したファイル。以下を設定可能。
@@ -40,3 +46,6 @@ concatenate.pyの設定値を記したファイル。以下を設定可能。
         - coordination -> それぞれの元動画にタイトルを表示する位置
         - fontsize -> タイトルの文字サイズ
         - thickness -> タイトルの文字の太さ
+
+    **[ 注意 ]**  
+        - adjust_fps.py と adjust_resolution.py の設定値は Argparser を使って設定する

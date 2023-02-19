@@ -52,7 +52,7 @@ class ReadCutter(object):
 
 
 class ReadConcatenater(object):
-    PATH = os.path.join(os.getcwd(), "config", "concatenater.yaml")
+    PATH = os.path.join(os.getcwd(), "config", "concatenate.yaml")
 
     @classmethod
     def getYamlPath(cls) -> str:

@@ -23,7 +23,7 @@ class YamlLoader(object):
     def __loadYaml(self) -> None:
         try:
             with open(self.__path, mode="r", encoding="utf-8") as f:
-                self.__yaml_data = yaml.load(f)
+                self.__yaml_data = yaml.safe_load(f)
         except Exception as e:
             print("[load_yaml]yamlファイルのロードができませんでした")
             print(e)
