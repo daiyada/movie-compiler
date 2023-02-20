@@ -10,7 +10,7 @@ from inout.load import YamlLoader
 
 
 class ReadCutter(object):
-    PATH = os.path.join(os.getcwd(), "config", "cutter.yaml")
+    PATH = os.path.join(os.getcwd(), "config", "cut.yaml")
 
     @classmethod
     def getYamlPath(cls):
