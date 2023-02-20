@@ -21,6 +21,8 @@ config/concatenate.yamlの設定値に則って、動画を合体する
         - 元の動画のfps未満にしか調整はできない
 - change_resolution.py
     - 動画の解像度を変更する
+- movie2gif.py
+    - movieからgifに変換する
 
 
 ### 3. 設定ファイル  
@@ -48,4 +50,4 @@ concatenate.pyの設定値を記したファイル。以下を設定可能。
         - thickness -> タイトルの文字の太さ
 
     **[ 注意 ]**  
-        - adjust_fps.py と adjust_resolution.py の設定値は Argparser を使って設定する
+        - adjust_fps.py, adjust_resolution.py, movie2gif.py の設定値は Argparser を使って設定する
