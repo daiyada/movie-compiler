@@ -10,6 +10,8 @@ $ pip install -r requirements.txt
 
 
 ### 2. 実行ファイル
+- imgs2movie.py  
+frame id を付与された file 群を動画データに変換する
 - cut.py  
 config/cut.yamlの設定値に則って、特定の動画を切り出す
 - concatenate.py  

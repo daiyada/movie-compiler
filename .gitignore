@@ -137,6 +137,9 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# Input
+input/
+
 # Output
 output/
 
@@ -145,3 +148,5 @@ smple.py
 
 # venv
 .mc-env
+
+.DS_Store
