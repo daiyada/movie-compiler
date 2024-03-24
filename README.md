@@ -10,6 +10,8 @@ $ pip install -r requirements.txt
 
 
 ### 2. 実行ファイル
+- change_movie_extension.py  
+指定の動画拡張子に変換する
 - imgs2movie.py  
 frame id を付与された file 群を動画データに変換する
 - cut.py  
